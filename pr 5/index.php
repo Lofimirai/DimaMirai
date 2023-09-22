@@ -1,19 +1,22 @@
 <?php 
-$host       = "db4.myarena.ru";      // Адрес сервера базы данных
-$dbname     = "b17_typical";    // Имя базы данных
-$user       = "u19978_b14";           // Имя пользователя
-$password   = "eR9eA8zO2a";               // Пароль
-$connection = new PDO('mysql:host='.$host.';dbname='.$dbname.';charset=utf8', $user, $password);
+$host = "db4.myarena.ru";
+$username = "u19978_b14";
+$password = "eR9eA8zO2a";
+$dbname = "u19978_b14";
 
-// Вставим информацию о нескольких странах
-// Россия    - Москва
-// Украина   - Киев
-// Беларусь  - Минск
-// Казахстан - Астана
-
-$affectedRows = $connection->exec('INSERT INTO `countries` VALUES ("Россия", "Москва"),("Украина",  "Киев"),("Беларусь", "Минск"),("Казахстан","Астана")');
-if( $affectedRows === false ){ echo "При выполнении запроса произошла ошибка"; }
-else { echo "В таблицу `countries` добавлено ".$affectedRows." записей"; }
-
+try {
+    $conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
+    // Устанавливаем режим обработки ошибок PDO
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    echo "Подключение успешно";
+} catch(PDOException $e) {
+    echo "Ошибка подключения: " . $e->getMessage();
+}
+$result = $connection->query('SELECT * FROM `TABLE_NAME`');
+while($row = $result->fetch( PDO::FETCH_ASSOC )){
+    foreach ($row as $key => $value) {
+        echo "<td>".$value."</td>";
+    }
+}
 
 ?>
