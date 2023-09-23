@@ -25,12 +25,14 @@ catch (PDOException $e)
         echo "<table border='1'>";
         // Вывод заголовков таблицы
         echo "<tr>";
+
         for ($i = 0; $i < $result->columnCount(); $i++) 
         {
             $column = $result->getColumnMeta($i);
             echo "<th>{$column['name']}</th>";
         }
         echo "</tr>";
+
         while ($row = $result->fetch(PDO::FETCH_ASSOC)) 
         {
             echo "<tr>";
@@ -40,7 +42,8 @@ catch (PDOException $e)
             echo "</tr>";
         }
         echo "</table>";
-        }}
+        }
+    }
         else {
             echo "Запросвыполнен с ошибкой ";
         }
