@@ -1,4 +1,8 @@
 <?php 
+  $host = "db4.myarena.ru";
+  $dbname = "u19978_b14";
+  $username = "u19978_b14";
+  $password = "eR9eA8zO2a";
   
         if( $_SERVER['REQUEST_METHOD'] !== 'POST' ) 
                 exit;
@@ -9,10 +13,10 @@
         if(empty($_POST['password'])) 
                 exit('Поле "пароль" не заполнено');
 
-        if(empty($_POST['password1'])) 
+        if(empty($_POST['passwordtry'])) 
                 exit('Поле "Подверждение пароля" не заполнено');
 
-        if($_POST['password'] !== $_POST['password1']) 
+        if($_POST['password'] !== $_POST['passwordtry']) 
                 exit('пароли не совпадают' );
 
         if (strlen($_POST['password']) < 9) {
