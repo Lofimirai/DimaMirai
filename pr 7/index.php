@@ -13,7 +13,7 @@
      <form action="action.php" method="post">
      <p>Логин:<span class="error">* <input type="text" name="name"></p>     
      <p>Пароль:<span class="error">* <input type="password" name="password"></p>
-     <p>Подтвердите пароль:<span class="error">* <input type="password" name="password1"></p>
+     <p>Подтвердите пароль:<span class="error">* <input type="password" name="passwordtry"></p>
      <p>Почта:<span class="error">* <input type="email" name="mail"></p>
      <p><input type="submit" value="Зарегестрироваться"></p> 
      </form>
