@@ -1,8 +1,9 @@
 <?php 
-  $host = "db4.myarena.ru";
-  $dbname = "u19978_b14";
-  $username = "u19978_b14";
-  $password = "eR9eA8zO2a";
+ $host       = "db4.myarena.ru";    
+ $dbname     = "u19978_b14";    
+ $user       = "u19978_b14";           
+ $password   = "eR9eA8zO2a";              
+ $connection = new PDO('mysql:host='.$host.';dbname='.$dbname.';charset=utf8', $user, $password);
   
         if( $_SERVER['REQUEST_METHOD'] !== 'POST' ) 
                 exit;
