@@ -3,7 +3,7 @@
        
         if(empty($_POST['age']) || (empty($_POST['name'] )))     
         
-        exit('Поля не заполнено');
+        exit('Поля заполнены не правильно');
 
         if(empty($_POST['age'])) {
             exit;
