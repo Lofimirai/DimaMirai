@@ -24,7 +24,7 @@
         if($_POST['password'] !== $_POST['passwordtry']) 
                 exit('Пароли не совпадают' );
 
-        if(empty($_POST['mail'])) 
+        if(empty($_POST['Email'])) 
                 exit('Поле "почта" не заполнено');
 
         echo 'Здравствуйте, '.htmlspecialchars($_POST['login']).'. <br>';
@@ -43,7 +43,7 @@
                 }
         
 
-                $select = $connection->prepare( "SELECT COUNT(`id`) as cnt FROM `users` WHERE `login` = ?;" ); 
+                $select = $connection->prepare( "SELECT COUNT(`id`) as cnt FROM `user` WHERE `login` = ?;" ); 
                 $res = $select->execute([ $_POST['login'] ] );
                 $row = $select->fetch();
             
@@ -54,12 +54,15 @@
                 if( $res && isset($row['cnt']) && $row[0] > 0 ){
                 exit( 'Ошибка регистрации... (Пользователь уже существует)' );
                 }
-            
+
+        
                 $pwd = $_POST['password'];
                 $pwd_hash = password_hash($pwd, PASSWORD_DEFAULT);
+
                 // Create new USER
-                $data = [ $_POST['login'], $pwd_hash, $_POST['email'] ];
-                $res = $connection->prepare( "INSERT INTO `users` (`login`, `password`, `email`) VALUES (?,?,?);" ); 
+
+                $data = [ $_POST['login'], $pwd_hash, $_POST['Email'] ];
+                $res = $connection->prepare( "INSERT INTO `user` (`login`, `password`, `Email`) VALUES (?,?,?);" ); 
                 $res = $res->execute( $data);
             
                 if( $res ){
