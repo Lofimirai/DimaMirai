@@ -19,7 +19,7 @@
         $link = '<a href = "./index.php">На главную</a>';
 
         if( $_SERVER['REQUEST_METHOD'] !== 'POST' ) {
-
+            exit;
             if(empty($_POST['login'])) 
             exit('Не все поля формы заполнены'.'<br>'.$link);
 
