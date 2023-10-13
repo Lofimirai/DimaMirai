@@ -41,7 +41,7 @@
         }
 
         if ($row && password_verify($_POST['password'],$row ["password"])) 
-        exit ( "Успешно вошол".$link .'<br>');
+        exit ( "Успешно вошол" . '<br>' . $link );
         
         else{
                 echo "не правильный логин или пароль";
