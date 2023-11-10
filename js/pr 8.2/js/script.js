@@ -1,15 +1,19 @@
-let arr=[];
+let arr=[
+"Ярков ",
+"Дмитрий ",
+"Вительевич ",
+"Студент",
+"Среднее",
+"Первая",
+"ОНИКС",
+"Информатика",
+"Примечание",
+];
 
-arrp=[
-'sname','name','pname','dolchnost','level','cotegogi','obrozovanie','dis','prim'] = 'Ярков','Дмитрий','Витальевич',
-''
-
-
-
-let name = "Ярков Дмитрий Витальевич";
-let dolchnost = "Студент";
-let level = "Среднее";
-let cotegogi = "Первая.";
-let obrozovanie = "ОНИКС";
-let dis = "Информатика.";
-let prim = "Примечание:";
+document.write(arr[0] +arr[1] +arr[2] +'<br>');
+document.write(arr[3] +'<br>');
+document.write(arr[4] +'<br>');
+document.write(arr[5] +'<br>');
+document.write(arr[6] +'<br>');
+document.write(arr[7] +'<br>');
+document.write(arr[8] +'<br>');
