@@ -1,4 +1,4 @@
-let paragraph = document.querySelector("#myParagraph");
+let paragraph = document.querySelector("#POWER");
 let person={
 
 sname: 'Ярков',
