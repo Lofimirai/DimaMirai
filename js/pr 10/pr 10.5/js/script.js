@@ -11,7 +11,7 @@ qwe.addEventListener('focus', () => {
   qwe.style.backgroundColor = 'blue';
 });
 qwe.addEventListener('blur', () => {
-  qwe.style.backgroundColor = 'white';
+  qwe.style.backgroundColor = 'blue';
 });
 
 let zxc = document.querySelector('.zxc');
