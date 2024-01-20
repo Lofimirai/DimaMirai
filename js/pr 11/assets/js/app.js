@@ -5,9 +5,9 @@ function closemodle (loseModal,modalGallery) {
   });
 }
 function initCloseModal() {
-    var modalGallery = document.querySelector(".modal-gallery");
-    var closeModal = document.querySelector(".modal-gallery .modal-close");
-    var closeModa = document.querySelector(".modal-gallery .modal-background");
+    const modalGallery = document.querySelector(".modal-gallery");
+    const closeModal = document.querySelector(".modal-gallery .modal-close");
+    const closeModa = document.querySelector(".modal-gallery .modal-background");
     closemodle(closeModal,modalGallery);
     closemodle(closeModa,modalGallery);
   }
@@ -37,7 +37,6 @@ function init() {
         });
     }
 }
-
 function addNewBlocks(images) {
   // Проверяем, осталось ли до конца страницы менее 15%
   if ((document.documentElement.scrollTop + document.documentElement.clientHeight) / document.documentElement.scrollHeight * 100 > 85) {
