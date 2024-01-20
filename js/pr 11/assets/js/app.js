@@ -20,18 +20,14 @@ function init() {
         images[i].addEventListener('click', function(event) {
             const image = event.target.src;
             const modal = document.querySelector('.modal-gallery');
-
             if (modal !== null) {
                 const modalImg = modal.querySelector('img');
                 const modalSubtitle = modal.querySelector('.image-subtitle');
-
                 modalImg.src = image;
                 modal.classList.add('is-active');
                 document.querySelector('html').classList.add('is-clipped');
-
                 const clickedImage = event.target;
                 const altAttribute = clickedImage.getAttribute('alt');
-
                 if (altAttribute) {
                     modalSubtitle.textContent = altAttribute;
                     modalImg.setAttribute('alt', altAttribute);
@@ -44,7 +40,6 @@ function init() {
         });
     }
 }
-
 function addNewBlocks(images) {
   // Проверяем, осталось ли до конца страницы менее 15%
   if ((document.documentElement.scrollTop + document.documentElement.clientHeight) / document.documentElement.scrollHeight * 100 > 85) {
